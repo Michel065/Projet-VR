@@ -1,0 +1,116 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4119b731cbaf77c4e8e56082696b6d60, type: 3}
+  m_Name: dialogue pnj principale
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueData
+  startNodeId: 0
+  nodes:
+  - id: 0
+    message: Salut !
+    nodeType: 0
+    nextNodeId: 1
+    choices: []
+    awaitedActionKey: 
+    successNextNodeId: 0
+    failNextNodeId: 0
+  - id: 1
+    message: Est-ce que tu peux m'aider ?
+    nodeType: 1
+    nextNodeId: 0
+    choices:
+    - choiceText: Oui
+      nextNodeId: 2
+    - choiceText: Non
+      nextNodeId: 11
+    awaitedActionKey: 
+    successNextNodeId: 0
+    failNextNodeId: 0
+  - id: 2
+    message: Mon ami a trop bu.
+    nodeType: 0
+    nextNodeId: 3
+    choices: []
+    awaitedActionKey: 
+    successNextNodeId: 0
+    failNextNodeId: 0
+  - id: 3
+    message: Il ne se sent vraiment pas bien...
+    nodeType: 0
+    nextNodeId: 4
+    choices: []
+    awaitedActionKey: 
+    successNextNodeId: 0
+    failNextNodeId: 0
+  - id: 4
+    message: Tu peux aller lui chercher de l'eau ?
+    nodeType: 2
+    nextNodeId: 0
+    choices: []
+    awaitedActionKey: water
+    successNextNodeId: 6
+    failNextNodeId: 5
+  - id: 5
+    message: 
+    nodeType: 4
+    nextNodeId: 0
+    choices: []
+    awaitedActionKey: water
+    successNextNodeId: 0
+    failNextNodeId: 0
+  - id: 6
+    message: Merci.
+    nodeType: 0
+    nextNodeId: 7
+    choices: []
+    awaitedActionKey: 
+    successNextNodeId: 0
+    failNextNodeId: 0
+  - id: 7
+    message: "\xC7a n'a pas l'air de suffire..."
+    nodeType: 0
+    nextNodeId: 8
+    choices: []
+    awaitedActionKey: 
+    successNextNodeId: 0
+    failNextNodeId: 0
+  - id: 8
+    message: Va chercher le gardien, vite.
+    nodeType: 0
+    nextNodeId: 9
+    choices: []
+    awaitedActionKey: 
+    successNextNodeId: 0
+    failNextNodeId: 0
+  - id: 9
+    message: "Il est s\xFBrement pr\xE8s de l'entr\xE9e du toit."
+    nodeType: 2
+    nextNodeId: 0
+    choices: []
+    awaitedActionKey: gardian
+    successNextNodeId: 10
+    failNextNodeId: 5
+  - id: 10
+    message: 
+    nodeType: 3
+    nextNodeId: 0
+    choices: []
+    awaitedActionKey: 
+    successNextNodeId: 0
+    failNextNodeId: 0
+  - id: 11
+    message: "Ah... d'accord. Je vais me d\xE9brouiller."
+    nodeType: 0
+    nextNodeId: 5
+    choices: []
+    awaitedActionKey: 
+    successNextNodeId: 0
+    failNextNodeId: 0

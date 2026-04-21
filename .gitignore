@@ -1,0 +1,41 @@
+# Ignore tout
+*
+
+# Autoriser base Unity
+!Assets/
+!ProjectSettings/
+!Packages/
+
+# Autoriser fichiers essentiels
+!.gitignore
+!*.meta
+
+# Autoriser contenu utile
+!Assets/Scripts/**
+!Assets/Scenes/**
+!Assets/Materials/**
+!Assets/Animations/**
+!Assets/prefabs/**
+!Assets/Settings/**
+!Assets/Editor/**
+
+# Autoriser fichiers utiles à la racine de Assets
+!Assets/DefaultVolumeProfile.asset
+
+# Bloquer tout le reste dans Assets
+Assets/*
+!Assets/Scripts/
+!Assets/Scenes/
+!Assets/Materials/
+!Assets/Animations/
+!Assets/prefabs/
+!Assets/Settings/
+!Assets/Editor/
+
+# Unity cache
+Library/
+Temp/
+Obj/
+Build/
+Logs/
+UserSettings/
