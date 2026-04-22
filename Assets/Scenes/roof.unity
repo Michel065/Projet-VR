@@ -3484,6 +3484,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1948832133}
     m_Modifications:
+    - target: {fileID: 1320843558543564658, guid: ba4a09cb77d970449845d8dea9c46bd5, type: 3}
+      propertyPath: dialogueData
+      value: 
+      objectReference: {fileID: 11400000, guid: dba7f58d1a1bad74b8711a4a3a0ac62e, type: 2}
     - target: {fileID: 1736070433618330476, guid: ba4a09cb77d970449845d8dea9c46bd5, type: 3}
       propertyPath: m_Name
       value: DialogueManager
@@ -3630,7 +3634,6 @@ MonoBehaviour:
   guardianDialogue: {fileID: 1945916165}
   guardianTrigger: {fileID: 1945916167}
   guardianScreen: {fileID: 1945916166}
-  debugLogs: 1
 --- !u!114 &1945916173
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4102,11 +4105,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1311192719727804382, guid: 97b9b0d197ae5ca4289c6db5b448f6e7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.6364
+      value: 0.689
       objectReference: {fileID: 0}
     - target: {fileID: 1311192719727804382, guid: 97b9b0d197ae5ca4289c6db5b448f6e7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -16.125
+      value: -16.21
       objectReference: {fileID: 0}
     - target: {fileID: 1311192719727804382, guid: 97b9b0d197ae5ca4289c6db5b448f6e7, type: 3}
       propertyPath: m_LocalRotation.w
