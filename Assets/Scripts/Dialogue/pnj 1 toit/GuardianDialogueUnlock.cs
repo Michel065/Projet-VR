@@ -17,6 +17,7 @@ public class GuardianDialogueUnlock : MonoBehaviour
 
     private void Start()
     {
+        guardianScreen.HideAll();
         RefreshState();
     }
 
@@ -30,6 +31,8 @@ public class GuardianDialogueUnlock : MonoBehaviour
             }
         }
 
+        if (guardianDialogue != null && (guardianDialogue.dialogueActive || guardianDialogue.dialogueDone || guardianDialogue.dialogueFinished))
+            return;
         RefreshState();
     }
 
@@ -43,13 +46,9 @@ public class GuardianDialogueUnlock : MonoBehaviour
         if (guardianTrigger != null)
             guardianTrigger.enabled = unlocked;
 
-        if (guardianScreen != null)
-        {
-            if (unlocked)
-                guardianScreen.ShowPing();
-            else
-                guardianScreen.HideAll();
-        }
+        if (unlocked)
+            guardianScreen.RefreshDisplay();
+
     }
 
     public void ValidateGuardianOnce(Collider other)
@@ -79,6 +78,7 @@ public class GuardianDialogueUnlock : MonoBehaviour
         if (guardianDialogue != null)
         {
             guardianDialogue.dialogueActive = false;
+            guardianDialogue.dialogueDone = false;
         }
 
         validateCount++;

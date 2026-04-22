@@ -17,8 +17,6 @@ public class DialogueScreenSecondary : MonoBehaviour
     [Header("Settings")]
     public bool followCamera = true;
 
-    private bool playerInside;
-
     private void Start()
     {
         HideAll();
@@ -79,8 +77,6 @@ public class DialogueScreenSecondary : MonoBehaviour
     {
         if (!other.CompareTag("Player"))
             return;
-
-        playerInside = true;
         RefreshDisplay();
     }
 
@@ -88,8 +84,6 @@ public class DialogueScreenSecondary : MonoBehaviour
     {
         if (!other.CompareTag("Player"))
             return;
-
-        playerInside = false;
         HideAll();
     }
 
