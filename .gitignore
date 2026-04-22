@@ -5,6 +5,7 @@
 !Assets/
 !ProjectSettings/
 !Packages/
+!README.txt
 
 
 !ProjectSettings/**
