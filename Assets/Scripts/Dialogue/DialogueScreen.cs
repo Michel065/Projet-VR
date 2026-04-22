@@ -40,9 +40,6 @@ public class DialogueScreen : MonoBehaviour
     {
         if (!followCamera)
             return;
-
-        if (pingRoot != null && pingRoot.activeSelf)
-            RotateTowardsCamera(pingRoot.transform);
     }
 
     public void HideAll()
