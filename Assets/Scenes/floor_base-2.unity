@@ -243,7 +243,6 @@ GameObject:
   - component: {fileID: 35675109}
   - component: {fileID: 35675108}
   - component: {fileID: 35675111}
-  - component: {fileID: 35675112}
   m_Layer: 0
   m_Name: Gobelet
   m_TagString: Untagged
@@ -323,8 +322,8 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &35675111
-MeshCollider:
+--- !u!65 &35675111
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -341,33 +340,9 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -1657361964532840086, guid: 1eea42ca84f66c947a6399b77cbcff7b, type: 3}
---- !u!136 &35675112
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 35675107}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.029445056
-  m_Height: 0.09804937
-  m_Direction: 1
-  m_Center: {x: 0.0043766755, y: 0.043433584, z: 0.00000008622356}
+  serializedVersion: 3
+  m_Size: {x: 0.043150354, y: 0.09707265, z: 0.011146001}
+  m_Center: {x: 0.017837709, y: 0.048536327, z: 0.033762153}
 --- !u!1 &208743381
 GameObject:
   m_ObjectHideFlags: 0
@@ -703,7 +678,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: a5a9e79859e06b64f9ce1f53f1539149, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
