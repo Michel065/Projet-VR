@@ -5,11 +5,13 @@
 !Assets/
 !ProjectSettings/
 !Packages/
-!README.txt
 
 
 !ProjectSettings/**
 !Packages/**
+
+!readMe.txt
+
 
 # Autoriser fichiers essentiels
 !.gitignore

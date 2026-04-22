@@ -1,1 +1,0 @@
-https://assetstore.unity.com/packages/3d/environments/training-table-136070
