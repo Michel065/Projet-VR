@@ -1,0 +1,128 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4119b731cbaf77c4e8e56082696b6d60, type: 3}
+  m_Name: dialogue pnj principale 2
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueData
+  startNodeId: 0
+  nodes:
+  - id: 0
+    message: Hey !
+    nodeType: 0
+    nextNodeId: 1
+    choices: []
+    awaitedActionKey: 
+    successNextNodeId: 0
+    failNextNodeId: 0
+  - id: 1
+    message: "On fait un petit jeu, \xE7a te dit de participer ?"
+    nodeType: 1
+    nextNodeId: 0
+    choices:
+    - choiceText: OUI
+      nextNodeId: 7
+    - choiceText: NON
+      nextNodeId: 6
+    awaitedActionKey: 
+    successNextNodeId: 0
+    failNextNodeId: 0
+  - id: 2
+    message: "Ah non ? T\u2019es vraiment pas fun..."
+    nodeType: 0
+    nextNodeId: 3
+    choices: []
+    awaitedActionKey: 
+    successNextNodeId: 0
+    failNextNodeId: 0
+  - id: 3
+    message: "Bon, je demande une derni\xE8re fois."
+    nodeType: 0
+    nextNodeId: 4
+    choices: []
+    awaitedActionKey: 
+    successNextNodeId: 0
+    failNextNodeId: 0
+  - id: 4
+    message: Tu veux jouer avec nous ?
+    nodeType: 1
+    nextNodeId: 0
+    choices:
+    - choiceText: Bon ok
+      nextNodeId: 8
+    - choiceText: NON
+      nextNodeId: 5
+    awaitedActionKey: water
+    successNextNodeId: 6
+    failNextNodeId: 5
+  - id: 5
+    message: Bon bah pars alors.
+    nodeType: 0
+    nextNodeId: 6
+    choices: []
+    awaitedActionKey: 
+    successNextNodeId: 0
+    failNextNodeId: 0
+  - id: 6
+    message: 
+    nodeType: 4
+    nextNodeId: 0
+    choices: []
+    awaitedActionKey: 
+    successNextNodeId: 0
+    failNextNodeId: 0
+  - id: 7
+    message: Super
+    nodeType: 0
+    nextNodeId: 9
+    choices: []
+    awaitedActionKey: 
+    successNextNodeId: 0
+    failNextNodeId: 0
+  - id: 8
+    message: Tu vois quand tu veux.
+    nodeType: 0
+    nextNodeId: 9
+    choices: []
+    awaitedActionKey: 
+    successNextNodeId: 0
+    failNextNodeId: 0
+  - id: 9
+    message: "Bois une canette et essaye de la lancer dans la poubelle l\xE0-bas."
+    nodeType: 0
+    nextNodeId: 10
+    choices: []
+    awaitedActionKey: 
+    successNextNodeId: 0
+    failNextNodeId: 0
+  - id: 10
+    message: "Si tu touches la poubelle, \xE7a fait un effet sympa. . . . "
+    nodeType: 0
+    nextNodeId: 11
+    choices: []
+    awaitedActionKey: 
+    successNextNodeId: 0
+    failNextNodeId: 0
+  - id: 11
+    message: "Mais \xE9vite les voitures !!"
+    nodeType: 0
+    nextNodeId: 12
+    choices: []
+    awaitedActionKey: 
+    successNextNodeId: 0
+    failNextNodeId: 0
+  - id: 11
+    message: 
+    nodeType: 0
+    nextNodeId: 12
+    choices: []
+    awaitedActionKey: 
+    successNextNodeId: 0
+    failNextNodeId: 0
