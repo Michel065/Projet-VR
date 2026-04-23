@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 1537817935403476415}
   - component: {fileID: 6846753610064596877}
   - component: {fileID: -7129143044740450285}
+  - component: {fileID: -5142100805627169680}
   m_Layer: 0
   m_Name: Balle
   m_TagString: Ball
@@ -301,6 +302,7 @@ MonoBehaviour:
   ballPrefab: {fileID: 8354399890791199890}
   spawnPoint: {fileID: 0}
   respawnDelay: 2
+  spawnRadius: 0.2
 --- !u!114 &-7129143044740450285
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -313,5 +315,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37e78da411f41ed44a85e43722425d2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BallMissDetector
-  drinkingCupPrefab: {fileID: 0}
-  drinkSpawnPoint: {fileID: 0}
+--- !u!114 &-5142100805627169680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8354399890791199890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c2879201a6ee574480a3279ce086bc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
