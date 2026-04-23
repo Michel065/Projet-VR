@@ -10,6 +10,9 @@
 !ProjectSettings/**
 !Packages/**
 
+!readMe.txt
+
+
 # Autoriser fichiers essentiels
 !.gitignore
 !*.meta

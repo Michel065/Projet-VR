@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4119b731cbaf77c4e8e56082696b6d60, type: 3}
   m_Name: dialogue pnj guardian
   m_EditorClassIdentifier: Assembly-CSharp::DialogueData
-  startNodeId: 0
+  startNodeId: 5
   nodes:
   - id: 0
     message: Vous avez besoin d'aide ?
@@ -52,7 +52,15 @@ MonoBehaviour:
     failNextNodeId: 0
   - id: 4
     message: 
-    nodeType: 3
+    nodeType: 4
+    nextNodeId: 0
+    choices: []
+    awaitedActionKey: 
+    successNextNodeId: 0
+    failNextNodeId: 0
+  - id: 5
+    message: Bonjour
+    nodeType: 0
     nextNodeId: 0
     choices: []
     awaitedActionKey: 

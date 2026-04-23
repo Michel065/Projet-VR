@@ -23,22 +23,35 @@ public class NPCDialogue : MonoBehaviour
 
     public void Interact()
     {
+
         if (dialogueDone)
+        {
             return;
+        }
 
         if (dialogueData == null || dialogueScreen == null)
+        {
             return;
-
-        if (!dialogueActive)
-            StartDialogue();
-        else
-            dialogueScreen.RefreshDisplay();
+        }
+        if (!dialogueDone && !dialogueFinished) { 
+            if (!dialogueActive)
+            {
+                StartDialogue();
+            }
+            else
+            {
+                dialogueScreen.RefreshDisplay();
+            }
+        }
     }
 
     public void StartDialogue()
     {
+
         if (dialogueData == null || dialogueScreen == null || dialogueDone)
+        {
             return;
+        }
 
         if (dialogueActive)
         {

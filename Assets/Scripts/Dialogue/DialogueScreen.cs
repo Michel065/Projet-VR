@@ -40,9 +40,6 @@ public class DialogueScreen : MonoBehaviour
     {
         if (!followCamera)
             return;
-
-        if (pingRoot != null && pingRoot.activeSelf)
-            RotateTowardsCamera(pingRoot.transform);
     }
 
     public void HideAll()
@@ -176,12 +173,18 @@ public class DialogueScreen : MonoBehaviour
 
     public void RefreshDisplay()
     {
+
         if (secondaryDialogue != null && secondaryDialogue.activeDialogue)
         {
+
             if (secondaryDialogue.currentNode != null)
+            {
                 ShowNormal(secondaryDialogue.currentNode);
+            }
             else
+            {
                 HideAll();
+            }
             return;
         }
 
@@ -197,7 +200,13 @@ public class DialogueScreen : MonoBehaviour
             return;
         }
 
-        if (npcDialogue == null || npcDialogue.currentNode == null)
+        if (npcDialogue == null)
+        {
+            ShowPing();
+            return;
+        }
+
+        if (npcDialogue.currentNode == null)
         {
             ShowPing();
             return;
@@ -211,11 +220,9 @@ public class DialogueScreen : MonoBehaviour
         if (!other.CompareTag("Player"))
             return;
 
-        Debug.Log("[OnPlayerEnter dans le gardian] ");
 
-        if (npcDialogue != null && npcDialogue.dialogueDone)
+        if (npcDialogue != null && npcDialogue.dialogueDone && npcDialogue.dialogueFinished)
         {
-            Debug.Log("[OnPlayerEnter dialogueDone] ");
             HideAll();
             return;
         }
@@ -223,11 +230,9 @@ public class DialogueScreen : MonoBehaviour
         playerInside = true;
 
         if (npcDialogue != null && !npcDialogue.dialogueActive) { 
-            Debug.Log("[OnPlayerEnter Interact] ");
             npcDialogue.Interact();
         }
         else { 
-            Debug.Log("[OnPlayerEnter RefreshDisplay] ");
             RefreshDisplay();
         }
     }
@@ -243,6 +248,12 @@ public class DialogueScreen : MonoBehaviour
             secondaryDialogue.HideSecondary();
 
         if (npcDialogue != null && npcDialogue.dialogueDone)
+        {
+            HideAll();
+            return;
+        }
+
+        if (npcDialogue != null && npcDialogue.dialogueFinished)
         {
             HideAll();
             return;
