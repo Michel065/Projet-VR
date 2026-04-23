@@ -26,9 +26,6 @@ public class DialogueScreenSecondary : MonoBehaviour
     {
         if (!followCamera)
             return;
-
-        if (questionRoot != null && questionRoot.activeSelf)
-            RotateTowardsCamera(transform);
     }
 
     public void HideAll()
@@ -101,19 +98,5 @@ public class DialogueScreenSecondary : MonoBehaviour
             return;
 
         root.SetActive(visible);
-    }
-
-    private void RotateTowardsCamera(Transform tr)
-    {
-        if (tr == null || targetCamera == null)
-            return;
-
-        Vector3 dir = targetCamera.position - tr.position;
-        dir.y = 0f;
-
-        if (dir.sqrMagnitude < 0.001f)
-            return;
-
-        tr.rotation = Quaternion.LookRotation(dir);
     }
 }
