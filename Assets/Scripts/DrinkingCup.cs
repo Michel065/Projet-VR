@@ -27,6 +27,7 @@ public class DrinkingCup : MonoBehaviour
         {
             isDrinking = true;
             Debug.Log("Le joueur boit !");
+            DrunkManager.instance.Drink();
             BallManager.instance.ClearDrinkingCup();
             gameObject.SetActive(false);
         }
