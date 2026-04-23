@@ -30,7 +30,7 @@ MonoBehaviour:
     - choiceText: OUI
       nextNodeId: 7
     - choiceText: NON
-      nextNodeId: 6
+      nextNodeId: 2
     awaitedActionKey: 
     successNextNodeId: 0
     failNextNodeId: 0
@@ -120,7 +120,7 @@ MonoBehaviour:
     failNextNodeId: 0
   - id: 11
     message: 
-    nodeType: 0
+    nodeType: 3
     nextNodeId: 12
     choices: []
     awaitedActionKey: 
