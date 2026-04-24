@@ -91,7 +91,7 @@ MonoBehaviour:
     successNextNodeId: 0
     failNextNodeId: 0
   - id: 9
-    message: "Il est s\xFBrement pr\xE8s de l'entr\xE9e du toit."
+    message: "Il est s\xFBrement pr\xE8s d'un coin du toit."
     nodeType: 2
     nextNodeId: 0
     choices: []
