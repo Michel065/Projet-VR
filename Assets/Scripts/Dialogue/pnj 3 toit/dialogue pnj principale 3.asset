@@ -15,7 +15,7 @@ MonoBehaviour:
   startNodeId: 0
   nodes:
   - id: 0
-    message: Hey !
+    message: "Salut\u2026 t\u2019es pr\xEAt pour un petit d\xE9fi ?"
     nodeType: 0
     nextNodeId: 1
     choices: []
@@ -23,19 +23,15 @@ MonoBehaviour:
     successNextNodeId: 0
     failNextNodeId: 0
   - id: 1
-    message: "On fait un petit jeu, \xE7a te dit de participer ?"
-    nodeType: 1
-    nextNodeId: 0
-    choices:
-    - choiceText: OUI
-      nextNodeId: 7
-    - choiceText: NON
-      nextNodeId: 2
+    message: Tu vois le jeu gonflable en bas ?
+    nodeType: 0
+    nextNodeId: 2
+    choices: []
     awaitedActionKey: 
     successNextNodeId: 0
     failNextNodeId: 0
   - id: 2
-    message: "Ah non ? T\u2019es vraiment pas fun..."
+    message: "Le but, c\u2019est de sauter depuis le toit et d\u2019atterrir dedans."
     nodeType: 0
     nextNodeId: 3
     choices: []
@@ -43,34 +39,26 @@ MonoBehaviour:
     successNextNodeId: 0
     failNextNodeId: 0
   - id: 3
-    message: "Bon, je demande une derni\xE8re fois."
-    nodeType: 0
-    nextNodeId: 4
-    choices: []
+    message: Alors, tu le fais ?
+    nodeType: 1
+    nextNodeId: 0
+    choices:
+    - choiceText: OUI
+      nextNodeId: 4
+    - choiceText: NON
+      nextNodeId: 6
     awaitedActionKey: 
     successNextNodeId: 0
     failNextNodeId: 0
   - id: 4
-    message: Tu veux jouer avec nous ?
-    nodeType: 1
+    message: OK, je regarde. Monte sur le tremplin.
+    nodeType: 2
     nextNodeId: 0
-    choices:
-    - choiceText: Bon ok
-      nextNodeId: 8
-    - choiceText: NON
-      nextNodeId: 5
-    awaitedActionKey: water
-    successNextNodeId: 6
-    failNextNodeId: 5
-  - id: 5
-    message: Bon bah pars alors.
-    nodeType: 0
-    nextNodeId: 6
     choices: []
-    awaitedActionKey: 
-    successNextNodeId: 0
+    awaitedActionKey: saute
+    successNextNodeId: 5
     failNextNodeId: 0
-  - id: 6
+  - id: 5
     message: 
     nodeType: 4
     nextNodeId: 0
@@ -78,32 +66,44 @@ MonoBehaviour:
     awaitedActionKey: 
     successNextNodeId: 0
     failNextNodeId: 0
-  - id: 7
-    message: Super
+  - id: 6
+    message: "S\xE9rieux ? Ok\u2026 petit joueur."
     nodeType: 0
-    nextNodeId: 9
+    nextNodeId: 7
+    choices: []
+    awaitedActionKey: 
+    successNextNodeId: 0
+    failNextNodeId: 0
+  - id: 7
+    message: Vas-y, regarde, je vais te montrer.
+    nodeType: 0
+    nextNodeId: 8
     choices: []
     awaitedActionKey: 
     successNextNodeId: 0
     failNextNodeId: 0
   - id: 8
-    message: Tu vois quand tu veux.
+    message: "Allez\u2026 c\u2019est parti. Je prends juste un peu d\u2019\xE9lan."
     nodeType: 0
-    nextNodeId: 9
+    nextNodeId: 13
     choices: []
     awaitedActionKey: 
     successNextNodeId: 0
     failNextNodeId: 0
   - id: 9
-    message: "Bois une canette et essaye de la lancer dans la poubelle l\xE0-bas."
-    nodeType: 0
-    nextNodeId: 10
-    choices: []
+    message: "Tu fais quoi ? Tu me g\xEAnes!"
+    nodeType: 1
+    nextNodeId: 0
+    choices:
+    - choiceText: Vas-y
+      nextNodeId: 12
+    - choiceText: "C\u2019est dangereux"
+      nextNodeId: 10
     awaitedActionKey: 
     successNextNodeId: 0
     failNextNodeId: 0
   - id: 10
-    message: "Si tu touches la poubelle, \xE7a fait un effet sympa. . . . "
+    message: "Bon\u2026 d\u2019accord. T\u2019as raison."
     nodeType: 0
     nextNodeId: 11
     choices: []
@@ -111,18 +111,34 @@ MonoBehaviour:
     successNextNodeId: 0
     failNextNodeId: 0
   - id: 11
-    message: "Mais \xE9vite les voitures !!"
-    nodeType: 0
-    nextNodeId: 12
+    message: 
+    nodeType: 3
+    nextNodeId: 0
     choices: []
     awaitedActionKey: 
     successNextNodeId: 0
     failNextNodeId: 0
-  - id: 11
-    message: 
-    nodeType: 3
-    nextNodeId: 12
+  - id: 12
+    message: C'est Partie !!!
+    nodeType: 0
+    nextNodeId: 14
     choices: []
     awaitedActionKey: 
     successNextNodeId: 0
+    failNextNodeId: 0
+  - id: 13
+    message: 
+    nodeType: 2
+    nextNodeId: 0
+    choices: []
+    awaitedActionKey: pnj3ready
+    successNextNodeId: 9
+    failNextNodeId: 11
+  - id: 14
+    message: 
+    nodeType: 2
+    nextNodeId: 0
+    choices: []
+    awaitedActionKey: saut
+    successNextNodeId: 11
     failNextNodeId: 0
