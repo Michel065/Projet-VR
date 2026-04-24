@@ -5,13 +5,16 @@ using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
 public class DrinkingCup : MonoBehaviour
 {
-    public float drinkHeight = 1.4f; // hauteur du visage approximative
+    public float drinkHeight = 1.4f;
+    public AudioClip drinkSound;
+    private AudioSource audioSource;
     private bool isDrinking = false;
     private XRGrabInteractable grabInteractable;
     private bool isHeld = false;
 
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         grabInteractable = GetComponent<XRGrabInteractable>();
         grabInteractable.selectEntered.AddListener(OnGrab);
         grabInteractable.selectExited.AddListener(OnRelease);
@@ -22,14 +25,23 @@ public class DrinkingCup : MonoBehaviour
 
     void Update()
     {
-     
         if (isHeld && transform.position.y >= drinkHeight && !isDrinking)
         {
             isDrinking = true;
             Debug.Log("Le joueur boit !");
             DrunkManager.instance.Drink();
             BallManager.instance.ClearDrinkingCup();
-            gameObject.SetActive(false);
+            StartCoroutine(DisableAfterSound());
         }
+    }
+
+    IEnumerator DisableAfterSound()
+    {
+        if (drinkSound != null)
+        {
+            audioSource.PlayOneShot(drinkSound);
+            yield return new WaitForSeconds(drinkSound.length);
+        }
+        gameObject.SetActive(false);
     }
 }
