@@ -19,16 +19,14 @@ public class CupDetector : MonoBehaviour
         {
             BallMissDetector missDetector = other.GetComponent<BallMissDetector>();
             if (missDetector != null)
-            {
                 missDetector.SetScored();
-            }
 
             Debug.Log("Point marqué !");
 
+            DrunkManager.instance.AddPoint(); // compteur de points
+
             if (successSound != null)
-            {
                 audioSource.PlayOneShot(successSound);
-            }
 
             StartCoroutine(DisableCupAfterDelay(other.gameObject));
         }

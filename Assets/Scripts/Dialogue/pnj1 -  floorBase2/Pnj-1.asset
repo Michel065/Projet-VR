@@ -62,3 +62,11 @@ MonoBehaviour:
     awaitedActionKey: 
     successNextNodeId: 0
     failNextNodeId: 0
+  - id: 10
+    message: "Bien jou\xE9 ! Tu as mis 3 balles !"
+    nodeType: 0
+    nextNodeId: 0
+    choices: []
+    awaitedActionKey: 
+    successNextNodeId: 0
+    failNextNodeId: 0

@@ -4,27 +4,50 @@ using UnityEngine;
 public class DrunkManager : MonoBehaviour
 {
     public static DrunkManager instance;
-
-    public int drunkLevel = 0; // 0, 1, 2, 3
+    public int drunkLevel = 0;
     public int maxLevel = 3;
     private Coroutine resetCoroutine;
+
+    [Header("Score")]
+    public int score = 0;
+    public int scoreToWin = 3;
+    public NPCDialogue victoryDialogue;
+    public int victoryNodeId = 10;
 
     void Awake()
     {
         instance = this;
     }
 
+    public void AddPoint()
+    {
+        score++;
+        Debug.Log("Score : " + score);
+
+        if (score >= scoreToWin)
+        {
+            Debug.Log("Gagné !");
+            if (victoryDialogue != null)
+            {
+             
+                    Debug.Log("DialogueScreen : " + victoryDialogue.dialogueScreen);
+                    Debug.Log("CurrentNode : " + victoryDialogue.currentNode);
+                    victoryDialogue.dialogueDone = false;
+                    victoryDialogue.dialogueFinished = false;
+                    victoryDialogue.dialogueActive = true;
+                    victoryDialogue.GoToNode(victoryNodeId);
+                    victoryDialogue.dialogueScreen.RefreshDisplay();
+          
+            }
+        }
+    }
+
     public void Drink()
     {
-        // Augmente le niveau sans dépasser le plafond
         drunkLevel = Mathf.Min(drunkLevel + 1, maxLevel);
         Debug.Log("Niveau ivresse : " + drunkLevel);
-
-        // Relance le timer de 40 secondes à chaque verre
         if (resetCoroutine != null) StopCoroutine(resetCoroutine);
         resetCoroutine = StartCoroutine(ResetAfterDelay());
-
-        // Applique les effets selon le niveau
         ApplyEffects();
     }
 
@@ -38,9 +61,7 @@ public class DrunkManager : MonoBehaviour
 
     void ApplyEffects()
     {
-        // On branchera les effets visuels ici
         Debug.Log("Appliquer effets niveau " + drunkLevel);
         FindFirstObjectByType<DrunkCameraEffect>().SetLevel(drunkLevel);
-
     }
 }
