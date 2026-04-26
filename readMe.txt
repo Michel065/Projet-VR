@@ -1,3 +1,5 @@
+https://assetstore.unity.com/packages/3d/props/10-drink-glasses-pack-3d-low-poly-models-292246
+https://assetstore.unity.com/packages/3d/environments/training-table-136070
 Asset michel:
 
 Aluminum Can "Standard"
