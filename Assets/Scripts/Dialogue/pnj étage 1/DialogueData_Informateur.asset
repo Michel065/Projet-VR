@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4119b731cbaf77c4e8e56082696b6d60, type: 3}
+  m_Name: DialogueData_Informateur
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueData
+  startNodeId: 0
+  nodes:
+  - id: 0
+    message: "Il s'est pass\xE9 quelque chose ce soir... mais personne ne s'en souvient
+      pareil."
+    nodeType: 0
+    nextNodeId: 1
+    choices: []
+    awaitedActionKey: 
+    successNextNodeId: 0
+    failNextNodeId: 0
+  - id: 1
+    message: "Tu as parl\xE9 aux autres. Qu'est-ce que tu en conclus ?"
+    nodeType: 1
+    nextNodeId: 1
+    choices:
+    - choiceText: C'est Duo A
+      nextNodeId: 2
+    - choiceText: C'est Duo B
+      nextNodeId: 2
+    - choiceText: "Personne ne dit la v\xE9rit\xE9"
+      nextNodeId: 3
+    awaitedActionKey: 
+    successNextNodeId: 0
+    failNextNodeId: 0
+  - id: 2
+    message: "Tu es s\xFBr ? Les deux se contredisent sur chaque d\xE9tail..."
+    nodeType: 1
+    nextNodeId: 1
+    choices: []
+    awaitedActionKey: 
+    successNextNodeId: 0
+    failNextNodeId: 0
+  - id: 3
+    message: "Exactement. Les souvenirs sont fragment\xE9s pour tout le monde."
+    nodeType: 2
+    nextNodeId: 1
+    choices: []
+    awaitedActionKey: Q1_Correct
+    successNextNodeId: 4
+    failNextNodeId: 4
+  - id: 4
+    message: "Garde l'\u0153il ouvert."
+    nodeType: 4
+    nextNodeId: 1
+    choices: []
+    awaitedActionKey: Q1_Correct
+    successNextNodeId: 4
+    failNextNodeId: 4

@@ -1,0 +1,82 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4119b731cbaf77c4e8e56082696b6d60, type: 3}
+  m_Name: DialogueData_Memorieux
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueData
+  startNodeId: 0
+  nodes:
+  - id: 0
+    message: "Je suis ici depuis 22h. J'ai vu quelqu'un monter \xE0 l'\xE9tage."
+    nodeType: 0
+    nextNodeId: 1
+    choices: []
+    awaitedActionKey: 
+    successNextNodeId: 0
+    failNextNodeId: 0
+  - id: 1
+    message: "Enfin... je crois que c'\xE9tait 22h. Ou minuit. L'heure m'\xE9chappe
+      compl\xE8tement."
+    nodeType: 1
+    nextNodeId: 2
+    choices:
+    - choiceText: "Signaler l'incoh\xE9rence"
+      nextNodeId: 2
+    - choiceText: Laisser passer
+      nextNodeId: 2
+    awaitedActionKey: 
+    successNextNodeId: 0
+    failNextNodeId: 0
+  - id: 2
+    message: La personne portait quelque chose. Une veste rouge, je crois.
+    nodeType: 0
+    nextNodeId: 3
+    choices: []
+    awaitedActionKey: 
+    successNextNodeId: 0
+    failNextNodeId: 0
+  - id: 3
+    message: "Attendez... De quoi je parlais ? Ah oui, la veste. Elle \xE9tait bleue
+      en fait."
+    nodeType: 1
+    nextNodeId: 4
+    choices:
+    - choiceText: "Signaler l'incoh\xE9rence"
+      nextNodeId: 4
+    - choiceText: Laisser passer
+      nextNodeId: 4
+    awaitedActionKey: 
+    successNextNodeId: 0
+    failNextNodeId: 0
+  - id: 4
+    message: "En tout cas, elle est mont\xE9e. Je l'ai vu de mes propres yeux."
+    nodeType: 0
+    nextNodeId: 5
+    choices: []
+    awaitedActionKey: 
+    successNextNodeId: 0
+    failNextNodeId: 0
+  - id: 5
+    message: C'est tout ce dont je me souviens... je crois
+    nodeType: 2
+    nextNodeId: 0
+    choices: []
+    awaitedActionKey: Q3_Done
+    successNextNodeId: 6
+    failNextNodeId: 6
+  - id: 5
+    message: C'est tout ce dont je me souviens... je crois
+    nodeType: 2
+    nextNodeId: 0
+    choices: []
+    awaitedActionKey: Q3_Done
+    successNextNodeId: 6
+    failNextNodeId: 6
