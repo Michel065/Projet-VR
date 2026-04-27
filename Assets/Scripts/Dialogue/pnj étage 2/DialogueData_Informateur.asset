@@ -10,22 +10,30 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4119b731cbaf77c4e8e56082696b6d60, type: 3}
-  m_Name: DialogueData_DuoB
+  m_Name: DialogueData_Informateur
   m_EditorClassIdentifier: Assembly-CSharp::DialogueData
   startNodeId: 0
   nodes:
   - id: 0
-    message: "Non non, c'\xE9tait bien avant minuit. Duo A confond tout."
+    message: Va voir ailleurs
     nodeType: 0
     nextNodeId: 1
+    choices: []
+    awaitedActionKey: LOCKED
+    successNextNodeId: 1
+    failNextNodeId: 1
+  - id: 1
+    message: "Non non, c'\xE9tait avant."
+    nodeType: 0
+    nextNodeId: 2
     choices: []
     awaitedActionKey: 
     successNextNodeId: 0
     failNextNodeId: 0
-  - id: 0
-    message: "Demande \xE0 quelqu'un d'autre."
+  - id: 2
+    message: Parle aux autres.
     nodeType: 4
-    nextNodeId: 1
+    nextNodeId: 0
     choices: []
     awaitedActionKey: 
     successNextNodeId: 0
