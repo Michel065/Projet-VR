@@ -7,6 +7,7 @@ TagManager:
   - Anchor
   - main pnj 1
   - Canette
+  - PNJ_Hand
   layers:
   - Default
   - TransparentFX

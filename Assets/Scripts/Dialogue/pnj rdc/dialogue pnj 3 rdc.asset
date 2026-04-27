@@ -1,0 +1,73 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4119b731cbaf77c4e8e56082696b6d60, type: 3}
+  m_Name: dialogue pnj 3 rdc
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueData
+  startNodeId: 0
+  nodes:
+  - id: 0
+    message: "Hey\u2026 euh\u2026 t\u2019as une minute ?"
+    nodeType: 0
+    nextNodeId: 1
+    choices: []
+    awaitedActionKey: 
+    successNextNodeId: 0
+    failNextNodeId: 0
+  - id: 1
+    message: "J\u2019ai perdu mon t\xE9l\xE9phone quelque part ici\u2026"
+    nodeType: 0
+    nextNodeId: 2
+    choices: []
+    awaitedActionKey: 
+    successNextNodeId: 0
+    failNextNodeId: 0
+  - id: 2
+    message: "Je crois qu\u2019il est tomb\xE9 pas loin, mais j\u2019arrive pas \xE0
+      le retrouver."
+    nodeType: 0
+    nextNodeId: 3
+    choices: []
+    awaitedActionKey: 
+    successNextNodeId: 0
+    failNextNodeId: 0
+  - id: 3
+    message: "Tu peux m\u2019aider \xE0 le chercher ?"
+    nodeType: 2
+    nextNodeId: 0
+    choices: []
+    awaitedActionKey: find_phone
+    successNextNodeId: 4
+    failNextNodeId: 0
+  - id: 4
+    message: "Oh merci ! Tu l\u2019as retrouv\xE9"
+    nodeType: 0
+    nextNodeId: 5
+    choices: []
+    awaitedActionKey: 
+    successNextNodeId: 0
+    failNextNodeId: 0
+  - id: 5
+    message: "Franchement sans toi j\u2019aurais gal\xE9r\xE9\u2026"
+    nodeType: 0
+    nextNodeId: 6
+    choices: []
+    awaitedActionKey: 
+    successNextNodeId: 0
+    failNextNodeId: 0
+  - id: 6
+    message: 
+    nodeType: 3
+    nextNodeId: 0
+    choices: []
+    awaitedActionKey: 
+    successNextNodeId: 0
+    failNextNodeId: 0
