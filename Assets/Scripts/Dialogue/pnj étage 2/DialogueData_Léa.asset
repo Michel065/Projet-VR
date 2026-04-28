@@ -19,11 +19,11 @@ MonoBehaviour:
     nodeType: 0
     nextNodeId: 1
     choices: []
-    awaitedActionKey: LOCKED
+    awaitedActionKey: Q
     successNextNodeId: 1
     failNextNodeId: 1
   - id: 1
-    message: '"Tu penses que c''est grave ?"'
+    message: Tu penses que c'est grave ?
     nodeType: 1
     nextNodeId: 2
     choices:
@@ -53,7 +53,7 @@ MonoBehaviour:
   - id: 4
     message: "S'il te pla\xEEt, fais vite."
     nodeType: 4
-    nextNodeId: 4
+    nextNodeId: 0
     choices: []
     awaitedActionKey: 
     successNextNodeId: 0
