@@ -68,7 +68,7 @@ MonoBehaviour:
     failNextNodeId: 0
   - id: 5
     message: "C'\xE9tait une mauvaise id\xE9e non ?"
-    nodeType: 0
+    nodeType: 1
     nextNodeId: 5
     choices:
     - choiceText: Oui
