@@ -1,0 +1,96 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4119b731cbaf77c4e8e56082696b6d60, type: 3}
+  m_Name: DialogueData_Rico
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueData
+  startNodeId: 0
+  nodes:
+  - id: 0
+    message: "H\xE9, t'as l'air tendu. J'ai quelque chose qui va te d\xE9tendre."
+    nodeType: 0
+    nextNodeId: 1
+    choices: []
+    awaitedActionKey: LOCKED
+    successNextNodeId: 1
+    failNextNodeId: 1
+  - id: 1
+    message: Tout le monde en prend ce soir. T'en veux ?
+    nodeType: 1
+    nextNodeId: 2
+    choices:
+    - choiceText: Non
+      nextNodeId: 2
+    - choiceText: Oui
+      nextNodeId: 4
+    awaitedActionKey: 
+    successNextNodeId: 0
+    failNextNodeId: 0
+  - id: 2
+    message: "S\xE9rieux ? T'es s\xFBr ? C'est juste pour s'amuser..."
+    nodeType: 0
+    nextNodeId: 3
+    choices: []
+    awaitedActionKey: 
+    successNextNodeId: 0
+    failNextNodeId: 0
+  - id: 3
+    message: "Allez, juste une fois \xE7a fait rien ?"
+    nodeType: 1
+    nextNodeId: 5
+    choices:
+    - choiceText: Non
+      nextNodeId: 6
+    - choiceText: OK
+      nextNodeId: 4
+    awaitedActionKey: 
+    successNextNodeId: 0
+    failNextNodeId: 0
+  - id: 4
+    message: "Tu vas voir, c'est cool au d\xE9but..."
+    nodeType: 0
+    nextNodeId: 5
+    choices:
+    - choiceText: Non
+      nextNodeId: 6
+    - choiceText: OK
+      nextNodeId: 4
+    awaitedActionKey: 
+    successNextNodeId: 0
+    failNextNodeId: 0
+  - id: 5
+    message: "C'\xE9tait une mauvaise id\xE9e non ?"
+    nodeType: 1
+    nextNodeId: 5
+    choices:
+    - choiceText: Oui
+      nextNodeId: 6
+    - choiceText: Non
+      nextNodeId: 7
+    awaitedActionKey: 
+    successNextNodeId: 0
+    failNextNodeId: 0
+  - id: 6
+    message: "Bien. Maintenant tu sais reconna\xEEtre ce pi\xE8ge."
+    nodeType: 4
+    nextNodeId: 5
+    choices: []
+    awaitedActionKey: 
+    successNextNodeId: 0
+    failNextNodeId: 0
+  - id: 7
+    message: "Regarde Max. C'est \xE7a la r\xE9alit\xE9."
+    nodeType: 4
+    nextNodeId: 5
+    choices: []
+    awaitedActionKey: 
+    successNextNodeId: 0
+    failNextNodeId: 0
