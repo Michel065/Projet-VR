@@ -13,6 +13,10 @@ public class CupDetector : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
     }
 
+public class CupDetector : MonoBehaviour
+{
+    public GameObject cup; // glisse le gobelet parent ici dans l'Inspector
+
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Ball"))
@@ -21,7 +25,7 @@ public class CupDetector : MonoBehaviour
             if (missDetector != null)
                 missDetector.SetScored();
 
-            Debug.Log("Point marqu� !");
+            Debug.Log("Point marqué !");
 
             DrunkManager.instance.AddPoint(); // compteur de points
 
@@ -37,5 +41,9 @@ public class CupDetector : MonoBehaviour
         yield return new WaitForSeconds(delay);
         ball.SetActive(false);
         cup.SetActive(false);
+    }
+            Debug.Log("Point marqué !");
+            cup.SetActive(false); // fait disparaître le gobelet
+        }
     }
 }
