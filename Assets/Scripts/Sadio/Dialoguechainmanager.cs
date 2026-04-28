@@ -2,7 +2,21 @@ using UnityEngine;
 using System.Collections.Generic;
 
 /// <summary>
-/// DialogueChainManager V2 — surveille Done ET End pour débloquer
+/// DialogueChainManager — Gestionnaire de chaîne de dialogues
+/// ─────────────────────────────────────────────────────────────
+/// SETUP UNITY :
+///   1. Crée un GameObject vide "DialogueChainManager" dans la Hierarchy
+///   2. Attache ce script dessus
+///   3. Pour chaque PNJ, configure un DialogueLink (voir Inspector)
+///   4. Tous les PNJ sauf le premier démarrent sur un nœud WaitAction
+///      avec awaitedActionKey = "LOCKED" (ils sont bloqués par défaut)
+///   5. Le premier PNJ n'est PAS bloqué — il démarre directement
+///
+/// LOGIQUE :
+///   PNJ_DuoA (libre) → parle → débloque PNJ_DuoB
+///   PNJ_DuoB (bloqué) → parle → débloque PNJ_Informateur
+///   PNJ_Informateur (bloqué) → parle → complète Q1
+/// ─────────────────────────────────────────────────────────────
 /// </summary>
 public class DialogueChainManager : MonoBehaviour
 {
@@ -16,12 +30,14 @@ public class DialogueChainManager : MonoBehaviour
         [Header("PNJ à débloquer quand celui-ci finit")]
         public NPCDialogue pnjToUnlock;
 
-        [Header("Clé WaitAction (si bloqué au départ)")]
+        [Header("Clé WaitAction de ce PNJ (si bloqué au départ)")]
+        [Tooltip("Doit correspondre au awaitedActionKey dans le DialogueData. Laisse vide si ce PNJ démarre libre.")]
         public string lockKey = "LOCKED";
 
         [Header("Ce PNJ est-il bloqué au départ ?")]
         public bool startsLocked = true;
 
+        // État interne
         [HideInInspector] public bool unlocked = false;
         [HideInInspector] public bool hasFinished = false;
     }
@@ -31,12 +47,17 @@ public class DialogueChainManager : MonoBehaviour
 
     void Start()
     {
+        // Débloque le premier PNJ automatiquement
         foreach (var link in chain)
         {
             if (!link.startsLocked)
             {
                 link.unlocked = true;
                 Debug.Log($"[ChainManager] {link.pnjName} démarre libre.");
+            }
+            else
+            {
+                Debug.Log($"[ChainManager] {link.pnjName} démarre bloqué (clé: {link.lockKey}).");
             }
         }
     }
@@ -48,54 +69,46 @@ public class DialogueChainManager : MonoBehaviour
             if (link.thisPNJ == null) continue;
             if (link.hasFinished) continue;
 
-            // Débloque le PNJ si son tour est venu
+            // Vérifie si ce PNJ est sur un nœud WaitAction
             bool isOnWaitAction = link.thisPNJ.waitingForAction;
             bool isLockNode = isOnWaitAction &&
                               link.thisPNJ.currentNode != null &&
                               link.thisPNJ.currentNode.awaitedActionKey == link.lockKey;
 
-            if (isLockNode && link.unlocked && link.startsLocked)
+            // Si PNJ bloqué et vient d'être débloqué → avance son dialogue
+            if (isLockNode && link.unlocked)
             {
                 link.thisPNJ.ReceiveAction(link.lockKey);
-                Debug.Log($"[ChainManager] {link.pnjName} débloqué !");
+                Debug.Log($"[ChainManager] {link.pnjName} débloqué → dialogue lancé.");
             }
 
-            // ✅ Surveille Done ET dialogueDone ET End
-            bool estFini = link.thisPNJ.dialogueDone ||
-                           link.thisPNJ.dialogueFinished ||
-                           EstSurNodeDoneOuEnd(link.thisPNJ);
-
-            if (estFini && !link.hasFinished)
+            // Vérifie si ce PNJ a fini son dialogue
+            if (link.thisPNJ.dialogueDone && !link.hasFinished)
             {
                 link.hasFinished = true;
-                Debug.Log($"[ChainManager] {link.pnjName} a fini → débloque suivant.");
+                Debug.Log($"[ChainManager] {link.pnjName} a fini → débloque le suivant.");
                 UnlockNext(link);
             }
         }
-    }
-
-    bool EstSurNodeDoneOuEnd(NPCDialogue pnj)
-    {
-        if (pnj.currentNode == null) return false;
-        return pnj.currentNode.nodeType == DialogueNodeType.Done ||
-               pnj.currentNode.nodeType == DialogueNodeType.End;
     }
 
     void UnlockNext(DialogueLink finishedLink)
     {
         if (finishedLink.pnjToUnlock == null) return;
 
+        // Trouve le lien correspondant au PNJ à débloquer
         foreach (var link in chain)
         {
             if (link.thisPNJ == finishedLink.pnjToUnlock)
             {
                 link.unlocked = true;
-                Debug.Log($"[ChainManager] {link.pnjName} maintenant débloqué !");
+                Debug.Log($"[ChainManager] {link.pnjName} est maintenant débloqué !");
                 return;
             }
         }
     }
 
+    // Appelé depuis l'extérieur pour débloquer un PNJ manuellement
     public void UnlockPNJ(NPCDialogue pnj)
     {
         foreach (var link in chain)
