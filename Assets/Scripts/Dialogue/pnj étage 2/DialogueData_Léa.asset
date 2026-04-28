@@ -37,7 +37,7 @@ MonoBehaviour:
   - id: 2
     message: "Parle \xE0 Tom, il \xE9tait avec lui."
     nodeType: 0
-    nextNodeId: 2
+    nextNodeId: 4
     choices: []
     awaitedActionKey: 
     successNextNodeId: 0
