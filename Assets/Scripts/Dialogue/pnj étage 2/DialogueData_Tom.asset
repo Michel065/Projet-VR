@@ -10,20 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4119b731cbaf77c4e8e56082696b6d60, type: 3}
-  m_Name: DialogueData_Informateur
+  m_Name: DialogueData_Tom
   m_EditorClassIdentifier: Assembly-CSharp::DialogueData
   startNodeId: 0
   nodes:
   - id: 0
-    message: Va voir ailleurs
-    nodeType: 0
+    message: Laisse-moi tranquille.
+    nodeType: 2
     nextNodeId: 1
     choices: []
     awaitedActionKey: LOCKED
     successNextNodeId: 1
     failNextNodeId: 1
   - id: 1
-    message: "Non non, c'\xE9tait avant."
+    message: Max ? Il va bien. Il a juste bu un peu trop.
     nodeType: 0
     nextNodeId: 2
     choices: []
@@ -31,7 +31,35 @@ MonoBehaviour:
     successNextNodeId: 0
     failNextNodeId: 0
   - id: 2
-    message: Parle aux autres.
+    message: C'est juste de l'alcool selon toi ?
+    nodeType: 1
+    nextNodeId: 2
+    choices:
+    - choiceText: Non
+      nextNodeId: 3
+    - choiceText: Oui
+      nextNodeId: 4
+    awaitedActionKey: 
+    successNextNodeId: 0
+    failNextNodeId: 0
+  - id: 3
+    message: "... Parle \xE0 Karim. Il sait ce qui s'est pass\xE9.\""
+    nodeType: 0
+    nextNodeId: 5
+    choices: []
+    awaitedActionKey: 
+    successNextNodeId: 0
+    failNextNodeId: 0
+  - id: 4
+    message: "Tu as tort. Parle \xE0 Karim."
+    nodeType: 0
+    nextNodeId: 5
+    choices: []
+    awaitedActionKey: 
+    successNextNodeId: 0
+    failNextNodeId: 0
+  - id: 5
+    message: Va le voir.
     nodeType: 4
     nextNodeId: 0
     choices: []

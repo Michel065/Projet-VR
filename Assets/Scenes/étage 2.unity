@@ -133,8 +133,9 @@ GameObject:
   - component: {fileID: 24281053}
   - component: {fileID: 24281052}
   - component: {fileID: 24281051}
+  - component: {fileID: 24281056}
   m_Layer: 0
-  m_Name: pnj_memorieux
+  m_Name: Rico
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -259,6 +260,22 @@ MonoBehaviour:
   dialogueDone: 0
   secondaryDialogue: {fileID: 0}
   skipSecondaryOnce: 0
+--- !u!114 &24281056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 24281049}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5139770f9ad17c14ba22034cc5faa082, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Q2_TriggerEffect
+  alcoholEffect: {fileID: 0}
+  triggerNodeId: 4
+  doseAmount: 0.8
+  doseDuration: 10
 --- !u!1001 &28675013
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2075,6 +2092,37 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 564933188}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &572167083
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 572167084}
+  m_Layer: 0
+  m_Name: on
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &572167084
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 572167083}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5.23649, y: 0.25, z: 0.73282}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &576134749
 GameObject:
   m_ObjectHideFlags: 0
@@ -2176,22 +2224,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueChainManager
   chain:
-  - thisPNJ: {fileID: 1388276324}
-    pnjName: DuoA
-    pnjToUnlock: {fileID: 1865160897}
+  - thisPNJ: {fileID: 767353006}
+    pnjName: "L\xE9a"
+    pnjToUnlock: {fileID: 1388276324}
     lockKey: LOCKED
     startsLocked: 0
     unlocked: 0
     hasFinished: 0
-  - thisPNJ: {fileID: 1865160897}
-    pnjName: DuoB
-    pnjToUnlock: {fileID: 767353006}
+  - thisPNJ: {fileID: 1388276324}
+    pnjName: Tom
+    pnjToUnlock: {fileID: 1865160897}
     lockKey: LOCKED
     startsLocked: 1
     unlocked: 0
     hasFinished: 0
-  - thisPNJ: {fileID: 767353006}
-    pnjName: Informateur
+  - thisPNJ: {fileID: 1865160897}
+    pnjName: Karim
     pnjToUnlock: {fileID: 0}
     lockKey: 
     startsLocked: 1
@@ -2291,7 +2339,7 @@ GameObject:
   - component: {fileID: 767353003}
   - component: {fileID: 767353007}
   m_Layer: 0
-  m_Name: pnj_informateur
+  m_Name: "L\xE9a"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3817,7 +3865,7 @@ GameObject:
   - component: {fileID: 1388276321}
   - component: {fileID: 1388276320}
   m_Layer: 0
-  m_Name: pnj_duoA
+  m_Name: 'Tom '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5260,7 +5308,7 @@ GameObject:
   - component: {fileID: 1865160894}
   - component: {fileID: 1865160893}
   m_Layer: 0
-  m_Name: pnj_duoB
+  m_Name: 'Karim '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5718,3 +5766,4 @@ SceneRoots:
   - {fileID: 692463779}
   - {fileID: 813794338}
   - {fileID: 1673327103}
+  - {fileID: 572167084}
