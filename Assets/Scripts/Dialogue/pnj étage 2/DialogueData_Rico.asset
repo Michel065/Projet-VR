@@ -19,9 +19,9 @@ MonoBehaviour:
     nodeType: 0
     nextNodeId: 1
     choices: []
-    awaitedActionKey: 
-    successNextNodeId: 0
-    failNextNodeId: 0
+    awaitedActionKey: LOCKED
+    successNextNodeId: 1
+    failNextNodeId: 1
   - id: 1
     message: Tout le monde en prend ce soir. T'en veux ?
     nodeType: 1
