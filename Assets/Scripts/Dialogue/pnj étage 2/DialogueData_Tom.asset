@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4119b731cbaf77c4e8e56082696b6d60, type: 3}
+  m_Name: DialogueData_Tom
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueData
+  startNodeId: 0
+  nodes:
+  - id: 0
+    message: Laisse-moi tranquille.
+    nodeType: 2
+    nextNodeId: 1
+    choices: []
+    awaitedActionKey: LOCKED
+    successNextNodeId: 1
+    failNextNodeId: 1
+  - id: 1
+    message: Max ? Il va bien. Il a juste bu un peu trop.
+    nodeType: 0
+    nextNodeId: 2
+    choices: []
+    awaitedActionKey: 
+    successNextNodeId: 0
+    failNextNodeId: 0
+  - id: 2
+    message: C'est juste de l'alcool selon toi ?
+    nodeType: 1
+    nextNodeId: 2
+    choices:
+    - choiceText: Non
+      nextNodeId: 3
+    - choiceText: Oui
+      nextNodeId: 4
+    awaitedActionKey: 
+    successNextNodeId: 0
+    failNextNodeId: 0
+  - id: 3
+    message: "... Parle \xE0 Karim. Il sait ce qui s'est pass\xE9.\""
+    nodeType: 0
+    nextNodeId: 5
+    choices: []
+    awaitedActionKey: 
+    successNextNodeId: 0
+    failNextNodeId: 0
+  - id: 4
+    message: "Tu as tort. Parle \xE0 Karim."
+    nodeType: 0
+    nextNodeId: 5
+    choices: []
+    awaitedActionKey: 
+    successNextNodeId: 0
+    failNextNodeId: 0
+  - id: 5
+    message: Va le voir.
+    nodeType: 4
+    nextNodeId: 0
+    choices: []
+    awaitedActionKey: 
+    successNextNodeId: 0
+    failNextNodeId: 0

@@ -1,0 +1,144 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4119b731cbaf77c4e8e56082696b6d60, type: 3}
+  m_Name: dialogue pnj principale 3
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueData
+  startNodeId: 0
+  nodes:
+  - id: 0
+    message: "Salut\u2026 t\u2019es pr\xEAt pour un petit d\xE9fi ?"
+    nodeType: 0
+    nextNodeId: 1
+    choices: []
+    awaitedActionKey: 
+    successNextNodeId: 0
+    failNextNodeId: 0
+  - id: 1
+    message: Tu vois le jeu gonflable en bas ?
+    nodeType: 0
+    nextNodeId: 2
+    choices: []
+    awaitedActionKey: 
+    successNextNodeId: 0
+    failNextNodeId: 0
+  - id: 2
+    message: "Le but, c\u2019est de sauter depuis le toit et d\u2019atterrir dedans."
+    nodeType: 0
+    nextNodeId: 3
+    choices: []
+    awaitedActionKey: 
+    successNextNodeId: 0
+    failNextNodeId: 0
+  - id: 3
+    message: Alors, tu le fais ?
+    nodeType: 1
+    nextNodeId: 0
+    choices:
+    - choiceText: OUI
+      nextNodeId: 4
+    - choiceText: NON
+      nextNodeId: 6
+    awaitedActionKey: 
+    successNextNodeId: 0
+    failNextNodeId: 0
+  - id: 4
+    message: OK, je regarde. Monte sur le tremplin.
+    nodeType: 2
+    nextNodeId: 0
+    choices: []
+    awaitedActionKey: saute
+    successNextNodeId: 5
+    failNextNodeId: 0
+  - id: 5
+    message: 
+    nodeType: 4
+    nextNodeId: 0
+    choices: []
+    awaitedActionKey: 
+    successNextNodeId: 0
+    failNextNodeId: 0
+  - id: 6
+    message: "S\xE9rieux ? Ok\u2026 petit joueur."
+    nodeType: 0
+    nextNodeId: 7
+    choices: []
+    awaitedActionKey: 
+    successNextNodeId: 0
+    failNextNodeId: 0
+  - id: 7
+    message: Vas-y, regarde, je vais te montrer.
+    nodeType: 0
+    nextNodeId: 8
+    choices: []
+    awaitedActionKey: 
+    successNextNodeId: 0
+    failNextNodeId: 0
+  - id: 8
+    message: "Allez\u2026 c\u2019est parti. Je prends juste un peu d\u2019\xE9lan."
+    nodeType: 0
+    nextNodeId: 13
+    choices: []
+    awaitedActionKey: 
+    successNextNodeId: 0
+    failNextNodeId: 0
+  - id: 9
+    message: "Tu fais quoi ? Tu me g\xEAnes!"
+    nodeType: 1
+    nextNodeId: 0
+    choices:
+    - choiceText: Vas-y
+      nextNodeId: 12
+    - choiceText: "C\u2019est dangereux"
+      nextNodeId: 10
+    awaitedActionKey: 
+    successNextNodeId: 0
+    failNextNodeId: 0
+  - id: 10
+    message: "Bon\u2026 d\u2019accord. T\u2019as raison."
+    nodeType: 0
+    nextNodeId: 11
+    choices: []
+    awaitedActionKey: 
+    successNextNodeId: 0
+    failNextNodeId: 0
+  - id: 11
+    message: 
+    nodeType: 3
+    nextNodeId: 0
+    choices: []
+    awaitedActionKey: 
+    successNextNodeId: 0
+    failNextNodeId: 0
+  - id: 12
+    message: C'est Partie !!!
+    nodeType: 0
+    nextNodeId: 14
+    choices: []
+    awaitedActionKey: 
+    successNextNodeId: 0
+    failNextNodeId: 0
+  - id: 13
+    message: 
+    nodeType: 2
+    nextNodeId: 0
+    choices: []
+    awaitedActionKey: pnj3ready
+    successNextNodeId: 9
+    failNextNodeId: 11
+  - id: 14
+    message: 
+    nodeType: 2
+    nextNodeId: 0
+    choices: []
+    awaitedActionKey: saut
+    successNextNodeId: 11
+    failNextNodeId: 0

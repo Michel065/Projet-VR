@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Anchor
   - main pnj 1
+  - Canette
+  - PNJ_Hand
   - Ball
   layers:
   - Default
