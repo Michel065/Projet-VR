@@ -21,6 +21,20 @@ public class NPCDialogue : MonoBehaviour
     public SecondaryDialogue secondaryDialogue;
     [HideInInspector] public bool skipSecondaryOnce;
 
+    public void ReceiveAction(string actionKey)
+    {
+        if (!waitingForAction) return;
+        if (currentNode == null) return;
+
+        if (currentNode.awaitedActionKey == actionKey)
+            GoToNode(currentNode.successNextNodeId);
+        else
+            GoToNode(currentNode.failNextNodeId);
+
+        waitingForAction = false;
+    }
+
+
     public void Interact()
     {
 
