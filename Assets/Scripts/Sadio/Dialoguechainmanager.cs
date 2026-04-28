@@ -111,6 +111,7 @@ public class DialogueChainManager : MonoBehaviour
     // Appelé depuis l'extérieur pour débloquer un PNJ manuellement
     public void UnlockPNJ(NPCDialogue pnj)
     {
+        Debug.Log($"[ChainManager] Tentative de débloquer {pnj.gameObject.name} manuellement.");
         foreach (var link in chain)
         {
             if (link.thisPNJ == pnj)

@@ -2226,7 +2226,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueChainManager
   chain:
   - thisPNJ: {fileID: 767353006}
-    pnjName: "L\xE9a"
+    pnjName: Lea
     pnjToUnlock: {fileID: 1388276324}
     lockKey: LOCKED
     startsLocked: 0
